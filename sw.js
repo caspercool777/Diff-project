@@ -117,4 +117,4 @@ self.addEventListener('fetch', evt => {
       return cacheRes || fetch(evt.request);
     })
   );
-});
+});*/
