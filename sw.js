@@ -79,6 +79,16 @@ self.addEventListener('fetch', async e => {
     await e.respondWith(res);
 });
 
+function createDB() {
+    idb.open('pwa-test', 1, function(upgradeDB) {
+        var store = upgradeDB.createObjectStore('logs', {
+            keyPath: 'id'
+        });
+        // store.put({id: 123, name: 'coke', price: 10.99, quantity: 200});
+        // store.put({id: 321, name: 'pepsi', price: 8.99, quantity: 100});
+        // store.put({id: 222, name: 'water', price: 11.99, quantity: 300});
+    });
+}
 
 /*const staticCacheName = 'site-static-v1';
 const assets = [
